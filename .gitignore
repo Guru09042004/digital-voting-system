@@ -1,0 +1,28 @@
+# Java / Maven
+**/target/
+**/build/
+*.class
+
+# Python
+**/__pycache__/
+**/venv/
+*.pyc
+
+# Secrets
+.env
+.env.*
+!.env.example
+**/application-local.properties
+**/application-local.yml
+**/application-local.yaml
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+
+# Local backup files
+*.backup

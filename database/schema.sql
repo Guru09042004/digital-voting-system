@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS voters (
+    id BIGSERIAL PRIMARY KEY,
+
+    voter_id VARCHAR(50) UNIQUE NOT NULL,
+
+    full_name VARCHAR(150) NOT NULL,
+
+    date_of_birth DATE NOT NULL,
+
+    mobile VARCHAR(10) UNIQUE NOT NULL,
+
+    email VARCHAR(255) UNIQUE NOT NULL,
+
+    password_hash TEXT NOT NULL,
+
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT voters_status_check
+        CHECK (status IN ('PENDING', 'VERIFIED', 'ACTIVE', 'BLOCKED'))
+);

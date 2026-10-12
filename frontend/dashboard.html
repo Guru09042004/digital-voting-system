@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard | Digital Voting</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Digital Voting System</h1>
+      <p>Administration Console</p>
+    </div>
+    <button id="logoutButton" class="logout">Logout</button>
+  </header>
+
+  <main class="page">
+    <section class="welcome panel">
+      <div>
+        <h2>Admin Dashboard</h2>
+        <p id="welcome">Checking session...</p>
+      </div>
+      <span id="roleBadge">ADMIN</span>
+    </section>
+
+    <p id="globalMessage" role="status"></p>
+
+    <section class="panel">
+      <h2>Create Election</h2>
+      <form id="createElectionForm" class="form-grid">
+        <label>Election Code
+          <input id="electionCode" required placeholder="ELECTION-2027-001">
+        </label>
+        <label>Election Title
+          <input id="electionTitle" required placeholder="Student Council Election">
+        </label>
+        <label>Description
+          <input id="electionDescription" placeholder="Election details">
+        </label>
+        <label>Start Date and Time
+          <input id="startTime" type="datetime-local" required>
+        </label>
+        <label>End Date and Time
+          <input id="endTime" type="datetime-local" required>
+        </label>
+        <button type="submit">Create Election</button>
+      </form>
+      <p id="electionMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Update Election Status</h2>
+      <form id="statusForm" class="form-grid">
+        <label>Election Code
+          <input id="statusElectionCode" required>
+        </label>
+        <label>New Status
+          <select id="electionStatus" required>
+            <option value="DRAFT">DRAFT</option>
+            <option value="SCHEDULED">SCHEDULED</option>
+            <option value="LIVE">LIVE</option>
+            <option value="CLOSED">CLOSED</option>
+            <option value="RESULT_DECLARED">RESULT_DECLARED</option>
+          </select>
+        </label>
+        <button type="submit">Update Status</button>
+      </form>
+      <p id="statusMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Add Candidate</h2>
+      <form id="candidateForm" class="form-grid">
+        <label>Election Code
+          <input id="candidateElectionCode" required>
+        </label>
+        <label>Candidate Code
+          <input id="candidateCode" required placeholder="CAND-001">
+        </label>
+        <label>Candidate Name
+          <input id="candidateName" required>
+        </label>
+        <label>Party Name
+          <input id="partyName">
+        </label>
+        <label>Symbol
+          <input id="candidateSymbol">
+        </label>
+        <button type="submit">Add Candidate</button>
+      </form>
+      <p id="candidateMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Voter Eligibility</h2>
+      <form id="eligibilityForm" class="form-grid">
+        <label>Election Code
+          <input id="eligibilityElectionCode" required>
+        </label>
+        <label>Voter ID
+          <input id="eligibilityVoterId" required>
+        </label>
+        <label>Eligibility
+          <select id="eligibilityStatus" required>
+            <option value="ELIGIBLE">ELIGIBLE</option>
+            <option value="INELIGIBLE">INELIGIBLE</option>
+          </select>
+        </label>
+        <button type="submit">Save Eligibility</button>
+      </form>
+      <p id="eligibilityMessage" class="message" role="status"></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

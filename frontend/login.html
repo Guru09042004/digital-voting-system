@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Digital Voting System</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Digital Voting System</h1>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="voterId">Voter ID</label>
+      <input id="voterId" name="voterId" required autocomplete="username">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password"
+             required autocomplete="current-password">
+
+      <button type="submit">Login</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
+    <p>New voter? <a href="register.html">Register here</a></p>
+  </main>
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

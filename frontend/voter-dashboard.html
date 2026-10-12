@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Dashboard | Digital Voting</title>
+  <link rel="stylesheet" href="css/voter.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Digital Voting</h1>
+      <p>Voter Dashboard</p>
+    </div>
+    <div class="account">
+      <span id="voterLabel">Voter</span>
+      <button id="logoutBtn" class="secondary">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h2>Welcome to your voting portal</h2>
+      <p>Review election details and select an election to view its candidates.</p>
+    </section>
+
+    <p id="pageMessage" class="message" role="status"></p>
+
+    <section>
+      <div class="section-heading">
+        <h2>Available Elections</h2>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+      <div id="electionsList" class="elections-grid">
+        <p>Loading elections...</p>
+      </div>
+    </section>
+
+    <section id="candidateSection" class="candidate-section" hidden>
+      <h2 id="selectedElectionTitle">Candidates</h2>
+      <p id="electionDetails"></p>
+      <p id="candidateMessage" class="message" role="status"></p>
+      <div id="candidatesList" class="candidates-grid"></div>
+    </section>
+
+    <section id="receiptSection" class="receipt" hidden>
+      <h2>Vote receipt</h2>
+      <p id="receiptMessage"></p>
+      <p>Election: <strong id="receiptElection"></strong></p>
+      <p>Candidate code: <strong id="receiptCandidate"></strong></p>
+      <p>Receipt ID: <strong id="receiptId"></strong></p>
+      <p>Recorded at: <strong id="receiptTime"></strong></p>
+      <p>Keep this receipt ID for your records.</p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/voter-dashboard.js"></script>
+</body>
+</html>
